@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Information Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: cadetblue;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            height: 130vh;
+
+        }
+
+
+
+        form {
+            background-color: #fff;
+            border: 2px solid black;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 25%;
+            height: 66vh;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 3px;
+            color: #333;
+        }
+
+
+        input {
+            width: 100%;
+            padding: 3px;
+            margin-bottom: 3px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 6px 20px;
+            font-size: 13px;
+            margin-top: 4px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+
+        .page5 {
+            width: 65%;
+    height: 46%;
+    margin-left: 18%;
+    margin-top: 65px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+        }
+
+        .page5 h1 {
+            text-align: center;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+
+        .c {
+            display: flex;
+            justify-content: center;
+        }
+
+        .c img {
+            height: 20px;
+            margin-top: 15px;
+            padding-right: 18px;
+        }
+
+        .c a {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .c p {
+            text-decoration: none;
+
+        }
+
+
+
+
+        .head h3 {
+            text-align: center;
+        }
+        .main{
+            margin-top: -35px;
+        }
+
+
+        .about {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            background-color: white;
+            width: 35%;
+            height: 66vh;
+
+            padding: 20px;
+            background-color: white;
+            border: 2px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="main">
+    <div class="content">
+
+
+        <div class="about">
+            <h3 id="head">Loan Approval Prediction Form</h3>
+            <p>The Loan Approval Prediction project utilizes machine learning to assess and predict the likelihood of
+                loan approvals. By analyzing a diverse set of features including gender, marital status, education,
+                income, and credit history, the model provides valuable insights into the factors influencing lending
+                decisions. This project not only demonstrates the application of advanced data science techniques in
+                financial scenarios but also addresses the crucial need for efficient and accurate loan approval
+                systems. By leveraging predictive modeling, it aims to enhance decision-making processes, reduce risks,
+                and streamline the loan approval process, contributing to the efficiency of financial institutions and
+                ensuring fair and data-driven lending practices.</p>
+        </div>
+        <form action="{{url_for('pred_for_loan')}}" method="post">
+
+
+            <!-- Married -->
+            <label for="married">Married:</label>
+            <select id="married" name="Married" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+
+            <!--Self Employed -->
+            <label for="selfEmployed">Self Employed:</label>
+            <select id="selfEmployed" name="Self_Employed" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!--Applicant Income -->
+            <label for="applicantIncome">Applicant Income:</label>
+            <input type="number" id="applicantIncome" name="ApplicantIncome" required><br>
+
+            <!--- Coapplicant Income -->
+            <label for="coapplicantIncome">Coapplicant Income:</label>
+            <input type="number" id="coapplicantIncome" name="CoapplicantIncome" required><br>
+
+
+
+            <!--Loan Amount Term-->
+            <label for="loanAmountTerm">Loan Amount Term:</label>
+            <input type="number" id="loanAmountTerm" name="Loan_Amount_Term" required><br>
+
+            <!--Credit History -->
+            <label for="creditHistory">Credit History:</label>
+            <select id="creditHistory" name="Credit_History" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!--Property Area -->
+            <label for="propertyArea">Property Area:</label>
+            <select id="propertyArea" name="Property_Area" required>
+                <option value="1">Urban</option>
+                <option value="2">Semi-Urban</option>
+                <option value="3">Rural</option>
+            </select><br>
+
+            <button type="submit" value="predict">Predict</button>
+
+        </form>
+
+    </div>
+
+</div>
+    <div class="page5" id="connect-me">
+        <h1>Contact</h1>
+        <div class="contact">
+            <div class="c">
+                <a href="#">
+                    <img src="https://img.freepik.com/premium-vector/phone-call-icon-isolated-white-background-telephone-symbol-vector-illustration_548264-469.jpg?w=740"
+                        alt="">
+                    <p>Contact:- 7588530005</p>
+                </a>
+            </div>
+            <div class="c">
+                <a href="https://mail.google.com/mail/">
+                    <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png" alt="">
+                    <p>Mail :- syedabdulazim2000@gmail.com</p>
+                </a>
+            </div>
+
+            <div class="c">
+                <a href="https://www.linkedin.com/in/abdul-azim-2847b0204/">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAaVBMVEUAd7X///8AcLEEebb7/f4Debb9/v79/v8DeLY8l8Y7lsYAbbCcyuKlz+WQxN+Lwd0KfbiDvdvl8fcAc7O+3OwgiL6x1ehFnMlytNZqsNQZhLzF4O7w9/tSo81gqtGp0ebc7PUsjsJ8udngaOvIAAADg0lEQVRoge2abZeqIBCAGV7EjXItKjc1y/7/j7xD7m5AWHdD+uScs3s8kDzOIMwMDoGrSJ4lEC6H0ckVkUEiyeQPBC+ar+pjcqm+GsQMEAntUSuaQJQ+toZC8F+7U4KJBMKE6ltUwkAqJUgiEapCAJGwpSwVgxBGtyAJh4NKCVEH4AStRZNZC+1F0V5orgXN00FyukBzZekh2XsgbzFXCMIGSQlhTCsjegrMCEQQVXfF8rOrFYm3YxjCdFnw6zbdFkJHr6AgROjdGYAbATjXOlaXEISRcgN88GEZh3NJIuclBBF0BfzXr3EoYve1ACTXPViuOAO+izRYAMLUxVLEqBK7RQcggp48yHJ6SG5cjAWRsI/0A0FN9g6Ew2p6TZhae+a6pDDXwn67UKt++rcL3+Gts072sW4gDOn5L4VjRBa7rwT3LkarDMNvmeEf8EV0tDSyC9O++dZku4uPyEb8CdO6KrbNtvjQOt5rjXnGnGGkrKmibALfP+7jBQ6fs0lCvnHIn4Tlj2KBsTkJX4cGYgLH1yiD8n+A/LcgACevrHe7ujRXQYXCEFHaIsLNZjgMnMrjstm0nLebZnXodSi6Cbvfz3Zzk3Y97I/ozOxmE2Dkql5vnCS0OQbe+WAgoZbOjcUPpLBbeU0I7dprZi4xlZYyM8ENNP3d6h2DcPkj/Ab5vDVjkllrgg/DpfNA+HN59D3DKMTahW3ILbxoa3Ru/D75x59Uni6vQ3hZOL7N8j9+ePMqRMLmACNnGHce6FUItrcgA4ThCdwU9HUIjDLuVImAjB/4+EFnjCZXba6xv/SU8oLOOEhmvQgu5GRPShQER25Pl667nFrXeBmc7ZUSA8FxLyU1mSWtTw7Fm5S4ia/Ud5KsnVtM34dlrwiIxNkV31ZhhG1sXTh01sy/DkG7W55SqC9npcLXJBBvHEzPLFU4rCeBgBeHs7MDKaaA4A5ZWggvdXKzs5chGTSOn2XKTZlX02jiJnnGOU8O8ZO8u146CWTpQdYzZIbMkBkyQ2bIDJkhA+QmDsRqDkCs3tXTqH4FtiyDxx6BkMiW/ZO4K6eH/eom+27oy2nnNB+8DPfo9j5JgswBk/PVnj1sfnzTKMScPVpf7fMnzU97JzqDfCxvhMxfsf8Ake8pX3hLIUbqkhJtSkpSF8ccTXGMKSXqk5f5vKVg6Xpkkbz06j1FZJC6HO4fbRVnSvd35FUAAAAASUVORK5CYII="
+                        alt="">
+                    <p>Linkedin:-https://www.linkedin.com/in/abdul-azim-2847b0204/</p>
+                </a>
+            </div>
+            <div class="c">
+                <a href="https://github.com/abdulazim2212">
+                    <img src="https://img.icons8.com/color/48/000000/git.png" alt="">
+                    <p>Github:-https://github.com/abdulazim2212</p>
+                </a>
+            </div>
+            <div class="c">
+                <a href="https://www.kaggle.com/syedabdulazim">
+                    <img src="https://www.kaggle.com/static/images/site-logo.svg" alt="">
+                    <p>Kaggle:-https://www.kaggle.com/syedabdulazim</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
