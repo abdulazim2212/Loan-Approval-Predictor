@@ -1,0 +1,67 @@
+<html lang="en">
+    <style>
+
+.Center{
+    font-family: 'Arial', sans-serif;
+         
+}
+.Center img{
+width: 65%;
+}
+
+body{
+    background-color: cadetblue;
+}
+body center h1{
+    padding-top: 20px;
+    position: absolute;
+    top: 2px;
+    left: 34%;
+}
+
+.container{
+     position: absolute;
+    display: flex;
+    top: 5px;
+    flex-direction: column;
+    color: aliceblue;
+    width: 32%;
+    margin-top: 136px;
+    height: 32%;
+    left: 33%;
+   
+}
+.container p {
+    padding: 28px;
+    font-size: 1.5rem;
+    background-color: #264c6d;
+}
+
+
+    </style>
+<body>
+
+    <center class="Center">
+        <img src="/static/loan.jpg" alt="" srcset="">
+        <h1>Titanic survival prediction</h1>
+    <div class="container">
+
+        {% if data == 0 %}
+        <!-- Not Alive Image -->
+        <p #="para">Loan Denied</p>
+        <p>We regret to inform you that based on our assessment, your loan application has been rejected.</p>
+
+
+        {% else %} 
+        <!-- Alive Image -->
+        <p>You will get loan</p>
+
+
+        {% endif %} 
+        <br><br>
+        <a href="/">Go back to the home page</a>
+    </div>
+    </center>
+
+</body>
+</html>
